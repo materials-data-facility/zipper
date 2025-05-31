@@ -1,0 +1,74 @@
+{
+  "/Users/ben/Downloads/test_folder/Blaiszik-results-from-prior-2": {
+    "folder_name": "Blaiszik-results-from-prior-2",
+    "processed_date": "2025-05-29T13:43:19.811686",
+    "original_size_bytes": 12806,
+    "original_size_gb": 1.1926516890525818e-05,
+    "file_count": 2,
+    "compressed_size_bytes": 5575,
+    "compressed_size_gb": 5.192123353481293e-06,
+    "compression_ratio": 43.53428080587225,
+    "status": "compressed",
+    "archive_path": "/Users/ben/Downloads/test_folder/Blaiszik-results-from-prior-2/.mdf/dataset.zip"
+  },
+  "/Users/ben/Downloads/test_folder/Blaiszik-results-from-prior": {
+    "folder_name": "Blaiszik-results-from-prior",
+    "processed_date": "2025-05-29T13:43:19.812341",
+    "original_size_bytes": 12775,
+    "original_size_gb": 1.1897645890712738e-05,
+    "file_count": 2,
+    "compressed_size_bytes": 5554,
+    "compressed_size_gb": 5.172565579414368e-06,
+    "compression_ratio": 43.47553816046967,
+    "status": "compressed",
+    "archive_path": "/Users/ben/Downloads/test_folder/Blaiszik-results-from-prior/.mdf/dataset.zip"
+  },
+  "/Users/ben/Downloads/test_folder/fcqjnkzhrhjptffmvxfbbjhkrxgkcbvd": {
+    "folder_name": "fcqjnkzhrhjptffmvxfbbjhkrxgkcbvd",
+    "processed_date": "2025-05-29T13:43:19.815722",
+    "original_size_bytes": 36028489,
+    "original_size_gb": 0.03355414513498545,
+    "file_count": 66,
+    "compressed_size_bytes": 33348514,
+    "compressed_size_gb": 0.03105822391808033,
+    "compression_ratio": 92.56151153050021,
+    "status": "compressed",
+    "archive_path": "/Users/ben/Downloads/test_folder/fcqjnkzhrhjptffmvxfbbjhkrxgkcbvd/.mdf/dataset.zip"
+  },
+  "/Users/ben/Downloads/test_folder/qpgsdschnkwpsyvmkfbftdrkzzcypdtw": {
+    "folder_name": "qpgsdschnkwpsyvmkfbftdrkzzcypdtw",
+    "processed_date": "2025-05-29T13:43:19.816082",
+    "original_size_bytes": 36036505,
+    "original_size_gb": 0.033561610616743565,
+    "file_count": 67,
+    "compressed_size_bytes": 33350255,
+    "compressed_size_gb": 0.031059845350682735,
+    "compression_ratio": 92.54575325770354,
+    "status": "compressed",
+    "archive_path": "/Users/ben/Downloads/test_folder/qpgsdschnkwpsyvmkfbftdrkzzcypdtw/.mdf/dataset.zip"
+  },
+  "/Users/ben/Downloads/test_folder/prwgtybcwwffzvfshkwypskngzfpksxs": {
+    "folder_name": "prwgtybcwwffzvfshkwypskngzfpksxs",
+    "processed_date": "2025-05-29T13:43:19.816149",
+    "original_size_bytes": 36022160,
+    "original_size_gb": 0.033548250794410706,
+    "file_count": 65,
+    "compressed_size_bytes": 33348473,
+    "compressed_size_gb": 0.03105818573385477,
+    "compression_ratio": 92.57766052896328,
+    "status": "compressed",
+    "archive_path": "/Users/ben/Downloads/test_folder/prwgtybcwwffzvfshkwypskngzfpksxs/.mdf/dataset.zip"
+  },
+  "/Users/ben/Downloads/test_folder/650c4826-f0ca-42e8-8dd9-94025a5307ce": {
+    "folder_name": "650c4826-f0ca-42e8-8dd9-94025a5307ce",
+    "processed_date": "2025-05-29T13:44:02.218414",
+    "original_size_bytes": 136459128,
+    "original_size_gb": 0.12708746641874313,
+    "file_count": 11597,
+    "compressed_size_bytes": 0,
+    "compressed_size_gb": 0.0,
+    "compression_ratio": 0.0,
+    "status": "skipped",
+    "archive_path": "/Users/ben/Downloads/test_folder/650c4826-f0ca-42e8-8dd9-94025a5307ce/.mdf/dataset.zip"
+  }
+}

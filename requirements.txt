@@ -1,0 +1,18 @@
+# MDF Zipper Requirements
+# This tool uses only Python standard library modules
+# No external dependencies required
+
+# Python 3.7+ is required for:
+# - pathlib (built-in since 3.4)
+# - dataclasses (built-in since 3.7)
+# - concurrent.futures (built-in since 3.2)
+# - zipfile (built-in)
+# - argparse (built-in)
+# - logging (built-in)
+# - threading (built-in)
+# - os, sys (built-in)
+
+# Optional: For development and testing
+# pytest>=6.0.0
+# black>=21.0.0
+# flake8>=3.8.0 
