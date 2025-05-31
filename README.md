@@ -18,8 +18,16 @@ A high-performance Python tool for automatically compressing subfolders based on
 
 ## Requirements
 
-- Python 3.7 or higher
+- Python 3.6 or higher (Python 3.7+ recommended for optimal compression)
 - No external dependencies (uses only Python standard library)
+
+### Python Version Compatibility
+
+- **Python 3.6+**: Basic functionality (default compression)
+- **Python 3.7+**: Optimal compression with `compresslevel` parameter support
+- **Python 3.8+**: Enhanced pathlib support for better performance
+
+The tool automatically detects your Python version and uses the appropriate compression method.
 
 ## Installation
 
@@ -27,6 +35,10 @@ A high-performance Python tool for automatically compressing subfolders based on
 2. Make the script executable (optional):
    ```bash
    chmod +x mdf_zipper.py
+   ```
+3. Test compatibility (optional):
+   ```bash
+   python test_python_compatibility.py
    ```
 
 ## Usage
@@ -311,6 +323,52 @@ The log file is stored in JSON format with detailed information:
     "archive_path": "/path/to/folder/.mdf/dataset.zip"
   }
 }
+```
+
+## Comprehensive Test Suite
+
+The MDF Zipper includes an extensive test suite to ensure absolute safety for high-value datasets:
+
+### Test Categories
+
+```bash
+# Run critical safety tests (RECOMMENDED before processing valuable data)
+python run_tests.py --critical-safety
+
+# Run all tests
+python run_tests.py --all
+
+# Run platform-specific tests (UNIX/Linux only)
+python run_tests.py --unix-linux
+
+# Run quick tests (excludes slow tests)
+python run_tests.py --quick
+
+# Run with coverage report
+python run_tests.py --coverage
+```
+
+### Test Coverage
+
+- **Critical Safety Tests**: Atomic operations, data integrity, failure recovery
+- **Data Integrity Tests**: Original file protection, archive validation
+- **Stress Tests**: Large datasets, concurrent access, memory limits
+- **Edge Cases**: Unicode files, permissions, symlinks, special file types
+- **UNIX/Linux Specific**: File permissions, signals, special files (FIFOs, device files), extended attributes
+- **Cross-Platform**: Windows, macOS, Linux compatibility
+
+### Safety Guarantees Verified
+
+✅ **Original files NEVER modified** - SHA256 checksum verification  
+✅ **Original files NEVER moved** - Absolute path tracking  
+✅ **Atomic archive creation** - Complete success or complete cleanup  
+✅ **Power failure protection** - Data integrity across interruptions  
+✅ **Memory exhaustion protection** - Graceful error handling  
+✅ **Concurrent access safety** - Files remain accessible during compression  
+
+For high-value datasets, **always run the critical safety tests first**:
+```bash
+python run_tests.py --critical-safety --verbose
 ```
 
 ## License

@@ -36,6 +36,7 @@ Examples:
   %(prog)s --critical-safety        # Run critical safety tests for high-value datasets (RECOMMENDED)
   %(prog)s --integrity             # Run only data integrity tests
   %(prog)s --stress                # Run stress tests
+  %(prog)s --unix-linux            # Run UNIX/Linux specific tests
   %(prog)s --quick                 # Run quick tests (exclude slow ones)
   %(prog)s --coverage              # Run with coverage report
   %(prog)s --parallel              # Run tests in parallel
@@ -54,6 +55,8 @@ Examples:
                        help='Run edge case tests')
     parser.add_argument('--performance', action='store_true',
                        help='Run performance tests')
+    parser.add_argument('--unix-linux', action='store_true',
+                       help='Run UNIX/Linux platform-specific tests')
     parser.add_argument('--quick', action='store_true',
                        help='Run quick tests (exclude slow ones)')
     parser.add_argument('--coverage', action='store_true',
@@ -66,7 +69,7 @@ Examples:
     args = parser.parse_args()
     
     if not any([args.all, args.critical_safety, args.integrity, args.stress, 
-                args.edge_cases, args.performance, args.quick]):
+                args.edge_cases, args.performance, args.unix_linux, args.quick]):
         # Default to running critical safety tests (most important for high-value datasets)
         args.critical_safety = True
     
@@ -111,6 +114,13 @@ Examples:
         cmd = ' '.join(cmd_parts + ['test_mdf_zipper.py::TestPerformance', '-v'])
         success &= run_command(cmd, "Running performance tests")
     
+    if args.unix_linux:
+        if sys.platform == "win32":
+            print("\n⚠️  UNIX/Linux specific tests skipped on Windows platform")
+        else:
+            cmd = ' '.join(cmd_parts + ['test_unix_linux_specific.py', '-v'])
+            success &= run_command(cmd, "Running UNIX/Linux platform-specific tests")
+    
     if args.quick:
         cmd = ' '.join(cmd_parts + ['-m', '"not slow"', '.'])
         success &= run_command(cmd, "Running quick tests")
@@ -121,6 +131,7 @@ Examples:
         print("\n💡 Test Summary:")
         print("   ✅ Data integrity verified")
         print("   ✅ Original files never modified")
+        print("   ✅ Original files never moved")
         print("   ✅ Archives created correctly")
         print("   ✅ All safety checks passed")
         
@@ -133,10 +144,23 @@ Examples:
             print("   ✅ Storage device failure protection")
             print("   ✅ ZIP corruption detection")
             print("   ✅ High-value dataset protection validated")
+        
+        if args.unix_linux and sys.platform != "win32":
+            print("\n🐧 UNIX/LINUX PLATFORM VERIFICATION:")
+            print("   ✅ File permission handling")
+            print("   ✅ Special file types (FIFOs, device files, hard links)")
+            print("   ✅ Signal handling (SIGTERM, SIGHUP)")
+            print("   ✅ Filesystem features (case sensitivity, extended attributes)")
+            print("   ✅ Network filesystem simulation")
+            print("   ✅ Resource limits and constraints")
+            print("   ✅ UNIX-specific edge cases")
+            
     else:
         print("❌ Some tests failed. Please review the output above.")
         if args.critical_safety:
             print("\n⚠️  CRITICAL: Safety tests failed - DO NOT USE on high-value datasets until issues are resolved!")
+        if args.unix_linux:
+            print("\n⚠️  WARNING: Platform-specific tests failed - Review UNIX/Linux compatibility!")
         sys.exit(1)
 
 

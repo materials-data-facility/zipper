@@ -164,9 +164,14 @@ class MDFZipper:
             self.logger.info(f"Creating archive: {archive_path}")
             
             # Create archive with temporary name first (atomic operation)
-            with zipfile.ZipFile(temp_archive_path, 'w', zipfile.ZIP_DEFLATED, 
-                               compresslevel=6) as zipf:
-                
+            # Use compresslevel only if supported (Python 3.7+)
+            try:
+                zipf = zipfile.ZipFile(temp_archive_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=6)
+            except TypeError:
+                # Fallback for Python < 3.7 without compresslevel parameter
+                zipf = zipfile.ZipFile(temp_archive_path, 'w', zipfile.ZIP_DEFLATED)
+            
+            with zipf:
                 for root, dirs, files in os.walk(folder_path):
                     # Skip the archive folder itself
                     if self.archive_folder in dirs:
